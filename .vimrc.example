@@ -1,0 +1,150 @@
+" Personal Settings.
+" More to be added soon.
+set nocp
+call pathogen#infect()
+filetype plugin indent on
+syntax on
+
+" Toggle F12 to toggle number
+noremap <silent> <F12> :set number!<CR>
+
+" set map leader
+:let mapleader = ","
+
+" set encoding file utf-8
+" set encoding=utf-8  " The encoding displayed.
+" set fileencoding=utf-8  " The encoding written to file.
+" iset fileformat unix
+set ff=unix
+set fileformat=unix
+
+" Set the status line options. Make it show more information.
+set laststatus=2
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\[POS=%l,%v][%p%%]\%{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+" Configure Tab
+" CF Configuration
+:set tabstop=4
+:set softtabstop=4
+:set shiftwidth=4
+:set expandtab incsearch ai
+:set wrap linebreak
+:set list
+:set listchars=tab:>-
+
+" Set shortcut and disable button
+nmap <leader>l :set list!<CR>
+imap kj <ESC>
+
+" visual block use q
+:nnoremap q <c-v>
+
+" default tree mode
+let g:netrw_liststyle=3
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+:set modelines=0
+:set nomodeline
+nnoremap [b :bp <CR>
+nnoremap ]b :bn <CR>
+
+" Easy Motion
+let g:EasyMotion_leader_key = '<Leader>'
+
+" ctrlp for fuzzy load files
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe
+set wildignore+=*/vendor/
+set wildignore+=*/install/
+
+" ctrlp-funky
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_matchtype = 'path'
+nnoremap <Leader>u :CtrlPFunky<Cr>
+
+" emmet-vim enable all functions
+let g:user_emmet_mode='inv'
+
+" Easier Split Window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Set Color Scheme and Font Options
+set t_Co=256
+colorscheme xoria256
+
+" set guifont=Consolas:h12
+
+" set line no, buffer, search, highlight, autoindent and more.
+set number
+set hidden
+set ignorecase
+set incsearch
+set smartcase
+set showmatch
+
+" set autoindent
+set ruler
+set vb
+set viminfo+=n$VIM/_viminfo
+set noerrorbells
+set showcmd
+set history=1000
+set undolevels=1000
+
+" Perforce
+nnoremap :ad :!p4 add %:p
+nnoremap :ed :!p4 edit %:p
+nnoremap :rv :!p4 revert %:p
+nnoremap :diff :!p4 diff %:p
+
+" (press ctrl + e to toggle nerdtree)
+map <C-e> :NERDTreeToggle<CR>
+" (press f8 to toggle tagbar" )
+nmap <F8> :TagbarToggle<CR>
+let g:signify_vcs_list = ['perforce']
+
+" set backspace to normal
+set backspace=2
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"Disable Arrow keys in Escape mode                                                                                      
+map <up> <nop>                                                                                                          
+map <down> <nop>                                                                                                        
+map <left> <nop>                                                                                                        
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
+
+" Nerdtree Git Plugin
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "",
+    \ "Staged"    : "",
+    \ "Untracked" : "",
+    \ "Renamed"   : "",
+    \ "Unmerged"  : "",
+    \ "Deleted"   : "",
+    \ "Dirty"     : "",
+    \ "Clean"     : "",
+    \ 'Ignored'   : '',
+    \ "Unknown"   : "?"
+    \ }
+
+let g:gitgutter_async=0

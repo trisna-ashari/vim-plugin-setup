@@ -6,7 +6,7 @@ This is simple bash script that will help you to setup vim plugin in easy way.
 Enter your local directory /home/{user} or root directory (for root user) and clone this repo by copy this command into your terminal:
 
 ```
-cd ~ && git clone https://gitlab.com/trisnaashari/vim-plugin-setup.git && cd ~/vim-plugin-setup && bash setup.sh
+cd ~ && git clone https://github.com/trisna-ashari/vim-plugin-setup.git && cd ~/vim-plugin-setup && bash setup.sh
 
 ```
 
